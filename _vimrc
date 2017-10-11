@@ -101,6 +101,8 @@ Plugin 'vim-scripts/indexer.tar.gz'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/vimprj'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
@@ -280,7 +282,7 @@ let g:SignatureMap = {
 " 设置 tagbar 子窗口的位置出现在主编辑区的左边
 let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>ilt :TagbarToggle<CR>
+nnoremap <Leader>tl :TagbarToggle<CR>
 " 设置标签子窗口的宽度
 let tagbar_width=32
 " tagbar 子窗口中不显示冗余帮助信息
@@ -348,15 +350,25 @@ nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 " >>
 " 查找
-
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
 nnoremap <Leader>sp :CtrlSF<CR>
+" <<
 
+" >>
+" 状态栏
+let g:airline_powerline_fonts = 1
+" <<
+
+" >>
+" 文件快速查找
+let g:ctrlp_map = '<c-p>' 
+let g:ctrlp_cmd = 'CtrlP'
+" 设置过滤不进行查找的后缀名 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
 " <<
 
 " >>
 " 内容替换
-
 " 快捷替换
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_skip_key='<C-k>'
